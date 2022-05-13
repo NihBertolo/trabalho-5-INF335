@@ -1,0 +1,4 @@
+br\unicamp\ic\inf335\beans\ProdutoBean.class
+br\unicamp\ic\inf335\exceptions\PriceException.class
+br\unicamp\ic\inf335\beans\AnuncioBean.class
+br\unicamp\ic\inf335\beans\AnuncianteBean.class

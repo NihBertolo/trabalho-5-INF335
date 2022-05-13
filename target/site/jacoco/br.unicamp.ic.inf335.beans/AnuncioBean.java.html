@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AnuncioBean.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">trabalho4</a> &gt; <a href="index.source.html" class="el_package">br.unicamp.ic.inf335.beans</a> &gt; <span class="el_source">AnuncioBean.java</span></div><h1>AnuncioBean.java</h1><pre class="source lang-java linenums">package br.unicamp.ic.inf335.beans;
+
+import br.unicamp.ic.inf335.exceptions.PriceException;
+
+import java.net.URL;
+import java.util.ArrayList;
+
+public class AnuncioBean implements java.io.Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Poduto anuncioado
+	 */
+	private ProdutoBean produto;
+	/**
+	 * Lista de Fotos do anuncio
+	 */
+	private ArrayList&lt;URL&gt; fotosUrl;
+	/**
+	 * Fra��o de desconto sendo 0 (0%) e 1 (100%)
+	 */
+	private Double desconto;
+	
+	
+	
+	public ProdutoBean getProduto() {
+<span class="fc" id="L31">		return produto;</span>
+	}
+
+
+
+	public void setProduto(ProdutoBean produto) {
+<span class="fc" id="L37">		this.produto = produto;</span>
+<span class="fc" id="L38">	}</span>
+
+
+
+	public ArrayList&lt;URL&gt; getFotosUrl() {
+<span class="fc" id="L43">		return fotosUrl;</span>
+	}
+
+
+
+	public void setFotosUrl(ArrayList&lt;URL&gt; fotosUrl) {
+<span class="fc" id="L49">		this.fotosUrl = fotosUrl;</span>
+<span class="fc" id="L50">	}</span>
+
+
+
+	public Double getDesconto() {
+<span class="fc" id="L55">		return desconto;</span>
+	}
+
+
+
+	public void setDesconto(Double desconto) throws PriceException {
+<span class="fc" id="L61">		this.desconto = validarDesconto(desconto);</span>
+<span class="fc" id="L62">	}</span>
+
+
+
+	public static long getSerialversionuid() {
+<span class="fc" id="L67">		return serialVersionUID;</span>
+	}
+
+
+    /**
+     * Contrutor default
+     */
+<span class="fc" id="L74">	public AnuncioBean () {</span>
+<span class="fc" id="L75">		produto = new ProdutoBean();</span>
+<span class="fc" id="L76">		fotosUrl = new ArrayList&lt;URL&gt;();</span>
+<span class="fc" id="L77">		desconto = 0.0;</span>
+<span class="fc" id="L78">	}</span>
+
+
+    /**
+     * Contrutor com par�metros
+     * @param produto
+     * @param fotosUrl
+     * @param desconto
+     */
+	public AnuncioBean(ProdutoBean produto, ArrayList&lt;URL&gt; fotosUrl, Double desconto) throws PriceException {
+<span class="fc" id="L88">		super();</span>
+<span class="fc" id="L89">		this.produto = produto;</span>
+<span class="fc" id="L90">		this.fotosUrl = fotosUrl;</span>
+<span class="fc" id="L91">		this.desconto = validarDesconto(desconto);</span>
+<span class="fc" id="L92">	}</span>
+
+	/**
+	 * Calcula valor do anuncio 
+	 * @return retona valor do produto menos o desconto 
+	 */
+	public Double getValor() {
+<span class="fc" id="L99">		return produto.getValor()-(produto.getValor()*desconto);</span>
+	}
+
+	private double validarDesconto(double desconto) throws PriceException {
+<span class="fc bfc" id="L103" title="All 4 branches covered.">		if (desconto&lt;0 || desconto&gt;1) {</span>
+<span class="fc" id="L104">			throw new PriceException(&quot;Valor do desconto deve estar entre 0 e 1.&quot;);</span>
+		}
+<span class="fc" id="L106">		return desconto;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -1,0 +1,5 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+trabalho4,br.unicamp.ic.inf335.exceptions,PriceException,0,4,0,0,0,2,0,1,0,1
+trabalho4,br.unicamp.ic.inf335.beans,ProdutoBean,37,86,1,5,15,23,10,8,9,6
+trabalho4,br.unicamp.ic.inf335.beans,AnuncioBean,21,69,0,4,8,16,5,8,5,6
+trabalho4,br.unicamp.ic.inf335.beans,AnuncianteBean,36,68,0,4,13,17,6,7,6,5
