@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                git 'https://github.com/NihBertolo/trabalho-5-INF335.git'
+                git branch: 'master', url: 'https://github.com/NihBertolo/trabalho-5-INF335.git'
                 sh 'mvn clean compile'
             }
         }
